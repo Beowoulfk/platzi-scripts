@@ -31,7 +31,7 @@ pipeline {
       steps {
         script {
           docker.withRegistry("", "DockerHubCredentials") {
-            dockerImage.push()
+            dockerImage.push('lastest')
           }
         }
       }
