@@ -29,8 +29,10 @@ pipeline {
         branch 'master'
       }
       steps {
+        script {
           withDockerRegistry([ credentialsId: "DockerHubCredentials", url: "" ]) {
-          dockerImage.push('latest')
+            dockerImage.push('latest')
+          }
         }
       }
     }
