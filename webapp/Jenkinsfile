@@ -30,7 +30,7 @@ pipeline {
       }
       steps {
           withDockerRegistry([ credentialsId: "DockerHubCredentials", url: "" ]) {
-          bat "docker push latest"
+          dockerImage.push('latest')
         }
       }
     }
